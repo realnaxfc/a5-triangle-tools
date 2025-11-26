@@ -38,6 +38,10 @@ public class Compiler {
 	
 	static boolean showTree = false;
 	static boolean folding = false;
+	static boolean showTreeAfter = false;
+	static boolean showStats = false;
+
+
 
 	private static Scanner scanner;
 	private static Parser parser;
@@ -123,7 +127,7 @@ public class Compiler {
 	public static void main(String[] args) {
 
 		if (args.length < 1) {
-			System.out.println("Usage: tc filename [-o=outputfilename] [tree] [folding]");
+			System.out.println("Usage: tc filename [-o=outputfilename] [tree] [folding] [showTreeAfter]");
 			System.exit(1);
 		}
 		
@@ -147,6 +151,10 @@ public class Compiler {
 				objectName = s.substring(3);
 			} else if (sl.equals("folding")) {
 				folding = true;
+			} else if (s1.equals("showtreeafter")) {
+            showTreeAfter = true;
+			}else if (s1.equals("showstats")) {
+            showTreeAfter = true;
 			}
 		}
 	}
